@@ -1,0 +1,56 @@
+<!--
+   heure.html
+   
+   Copyright 2021  <pi@raspberrypi>
+   
+ -->
+
+<!DOCTYPE html PUBLIC>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+	<title>Heure</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.33" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+   <div class="mainTitle">   
+	<h1>Arrosage au 463 coté RUE</h1>
+	<p></p>
+</div>
+<div class="topnav">
+  <a href="./index.html">Accueil</a>
+  <a href="./automatique.html">Automatique</a>
+  <a href="./manuel.html">Manuel</a>
+  <a class="active" href="#">Heure</a>
+</div>
+
+<div class="content">
+  <div class="card">
+    
+	<h3>Ajustement de la date et de l'heure du ESP32 &#8986; &#8986; &#8986;</h3>
+	<p>
+	   <p><span id="heureValeur">%HEURE%</span></p>
+	   <input type="datetime-local" id="ajusteHeure" onchange="changeHeure(this)" value=%HEURE% name="Heure et date actuelle">
+        </p>
+	<!-- p>
+	   <button class="boutonSoumettre">Ajuster l'heure et la date</button></p -->
+</div>
+</div>
+	<script>
+	  function changeHeure(element) {
+	    var heureValue = document.getElementById("ajusteHeure").value;
+	    document.getElementById("heureValeur").innerHTML = heureValue;
+	    console.log(heureValue);
+	    window.alert(heureValue);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/heure?value="+heureValue, true);
+	    xhr.send();
+}
+</script>
+</body>
+
+</html>

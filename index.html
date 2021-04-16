@@ -1,0 +1,44 @@
+<!--
+   index.html
+   
+   Copyright 2021  <pi@raspberrypi>
+      
+-->
+
+<!DOCTYPE html PUBLIC>
+<html lang="fr">
+
+<head>
+	<title>Arrosage 463 - RUE</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--meta http-equiv="refresh" content="5"-->
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div class="mainTitle">   
+	<h1>Arrosage au 463 coté RUE</h1>
+	<p></p>
+</div>
+<div class="topnav">
+  <a class="active" href="#">Accueil</a>
+  <a href="./automatique.html">Automatique</a>
+  <a href="./manuel.html">Manuel</a>
+  <a href="./heure.html">Heure</a>
+</div>
+
+<div class="content">
+  <div class="card">
+  <h2>État du système</h2>
+  <p>Mode de fonctionnement : %MODE%</p>
+  <p>Arrosage prévu a %DEPART%.</p>
+  <!--p>Arrosage de la zone z en cours.</p-->
+  <p>Température &#127777; : %TEMP% &#176;C.</p>
+  </div>
+  <div class="card">
+  <p><a href="/modAuto"><button class="mode" id="Auto">AUTOMATIQUE</button></a></p>
+  <p><a href="/modManu"><button class="mode" id="Manu">MANUEL</button></a></p>
+  <p><a href="/modAnnu"><button class="mode" id="Arret">ANNULER</button></a></p>
+</div></div>
+</body>
+</html>

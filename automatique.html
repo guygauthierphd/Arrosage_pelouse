@@ -1,0 +1,136 @@
+<!--
+   automatique.html
+   
+   Copyright 2021  <pi@raspberrypi>
+   
+   
+-->
+
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+	<title>Configuration mode automatique</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.33" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+   <div class="mainTitle">   
+	<h1>Arrosage au 463 coté RUE</h1>
+	<p></p>
+</div>
+<div class="topnav">
+  <a href="./index.html"  title="Page d'accueil">Accueil</a>
+  <a class="active" href="#">Automatique</a>
+  <a href="./manuel.html"  title="Commandes aux valves">Manuel</a>
+  <a href="./heure.html" title="Ajustement de l'heure">Heure</a>
+</div>
+
+<div class="content">
+  <div class="card">
+   <h3>Ajustement des paramètres d'arrosage</h3>
+   <p><ul>
+	   <li>Les durées sont en minutes.</li>
+	   <li>Chaque paramètre est confirmé dès sa modification.</li>
+	  </ul>
+	</p>
+	<table align="center">
+	    <tr><th>Heure de départ</th><td colspan="2"><input type="time" id="depart" onchange="changeDepart(this)" value=%DEPART% /></td></tr>
+	    <tr><th colspan="3"></th></tr>
+	    <tr><th>Zone</th><td>Jeudi</td><td>Autres</td></tr>
+	    <tr><th>Pelouse est</th><td><input type="number" id="du1" min="0" max="1200" onchange="changeDu1(this)" value=%DUR1% step="1" size="4"/></td><td></td></tr>
+	    <tr><th>Pelouse ouest</th><td><input type="number" id="du2" min="0" max="1200" onchange="changeDu2(this)" value=%DUR2% step="1" size="4"/></td><td></td></tr>
+        <tr><th>Pelouse coté</th><td><input type="number" id="du3" min="0" max="1200" onchange="changeDu3(this)" value=%DUR3% step="1" size="4"/></td><td></td></tr>
+	    <tr><th>Parterre haut</th><td><input type="number" id="du4" min="0" max="1200" onchange="changeDu4(this)" value=%DUR4% step="1" size="4"/></td><td><input type="number" id="du9" min="0" max="1200" onchange="changeDu9(this)" value=%DUR9% step="1" size="4"/></td></tr>
+	    <tr><th>Parterre bas</th><td><input type="number" id="du5" min="0" max="1200" onchange="changeDu5(this)" value=%DUR5% step="1" size="4"/></td><td><input type="number" id="duA" min="0" max="1200" onchange="changeDuA(this)" value=%DURA% step="1" size="4"/></td></tr>
+	    <tr><th>Parterre ilôt</th><td><input type="number" id="du6" min="0" max="1200" onchange="changeDu6(this)" value=%DUR6% step="1" size="4"/></td><td><input type="number" id="duB" min="0" max="1200" onchange="changeDuB(this)" value=%DURB% step="1" size="4"/></td></tr>
+	</table>
+</div></div>
+	<script>
+	  function changeDepart(element) {
+	    var heureValue = document.getElementById("depart").value;
+	    console.log(heureValue);
+	    window.alert(heureValue);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/depart?value="+heureValue, true);
+	    xhr.send();
+	 }
+	 function changeDu1(element) {
+	    var du1Value = document.getElementById("du1").value;
+	    console.log(du1Value);
+	    window.alert(du1Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du1?value="+du1Value, true);
+	    xhr.send();
+	 }
+	 function changeDu2(element) {
+	    var du2Value = document.getElementById("du2").value;
+	    console.log(du2Value);
+	    window.alert(du2Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du2?value="+du2Value, true);
+	    xhr.send();
+	 }
+	 function changeDu3(element) {
+	    var du3Value = document.getElementById("du3").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du3?value="+du3Value, true);
+	    xhr.send();
+	 }
+	 function changeDu4(element) {
+	    var du3Value = document.getElementById("du4").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du4?value="+du3Value, true);
+	    xhr.send();
+	 }
+	 function changeDu5(element) {
+	    var du3Value = document.getElementById("du5").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du5?value="+du3Value, true);
+	    xhr.send();
+	 }
+	 function changeDu6(element) {
+	    var du3Value = document.getElementById("du6").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du6?value="+du3Value, true);
+	    xhr.send();
+	 }
+	 function changeDu9(element) {
+	    var du3Value = document.getElementById("du9").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/du9?value="+du3Value, true);
+	    xhr.send();
+	 }
+	 function changeDuA(element) {
+	    var du3Value = document.getElementById("duA").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/duA?value="+du3Value, true);
+	    xhr.send();
+	 }
+	 function changeDuB(element) {
+	    var du3Value = document.getElementById("duB").value;
+	    console.log(du3Value);
+	    window.alert(du3Value);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", "/duB?value="+du3Value, true);
+	    xhr.send();
+	 }
+</script>
+</body>
+
+</html>

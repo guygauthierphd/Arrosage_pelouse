@@ -1,0 +1,107 @@
+<!--
+   heure.html
+   
+   Copyright 2021  <pi@raspberrypi>
+   
+ -->
+
+<!DOCTYPE html PUBLIC>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+	<title>Mode manuel</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.33" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="refresh" content="5">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+   <div class="mainTitle">   
+	<h1>Arrosage au 463 coté RUE</h1>
+	<p></p>
+</div>
+<div class="topnav">
+  <a href="./index.html">Accueil</a>
+  <a href="./automatique.html">Automatique</a>
+  <a class="active" href="#">Manuel</a>
+  <a href="./heure.html">Heure</a>
+</div>
+
+<h2>Mode manuel du système d'arrosage &#128400; &#128400; &#128400;</h2>
+	
+<div class="content">
+  <div class="card">
+    <h3>Pelouse est &#127793;&#127793;&#127793; : %ETAT1%</h3>
+	
+	<p>
+	   <p><a href="/marche01"><button class="zone" id="zone1m">Marche</button></a>
+	   <a href="/arret01"><button class="zone" id="zone1a">ARRET</button></a></p>
+        </p>
+</div>
+  <div class="card">
+    <h3>Pelouse ouest &#127793;&#127793;&#127793; : %ETAT2% <!--&#128167; &#127777; &#8986; --></h3>
+	
+	<p>
+	   <p><a href="/marche02"><button class="zone" id="zone2m">Marche</button></a>
+	   <a href="/arret02"><button class="zone" id="zone2a">ARRET</button></a></p>
+	   
+        </p>
+</div>
+  <div class="card">
+    <h3>Pelouse coté &#127793;&#127793;&#127793; : %ETAT3% <!--&#128167; &#127777; &#8986; --></h3>
+	
+	<p>
+	   <p><a href="/marche03"><button class="zone" id="zone3m">Marche</button></a>
+	   <a href="/arret03"><button class="zone" id="zone3a">ARRET</button></a></p>
+        </p>
+</div>
+  <div class="card">
+    <h3>Parterre haut &#127804;&#127804;&#127804; : %ETAT4% <!--&#128167; &#127777; &#8986; --></h3>
+	
+	<p>
+	   <p><a href="/marche04"><button class="zone" id="zone4m">Marche</button></a>
+	   <a href="/arret04"><button class="zone" id="zone4a">ARRET</button></a></p>
+        </p>
+</div>
+  <div class="card">
+    <h3>Parterre bas &#127804;&#127804;&#127804; : %ETAT5% <!--&#128167; &#127777; &#8986; --></h3>
+	
+	<p>
+	   <p><a href="/marche05"><button class="zone" id="zone5m">Marche</button></a>
+	   <a href="/arret05"><button class="zone" id="zone5a">ARRET</button></a></p>
+        </p>
+</div>
+  <div class="card">
+    <h3>Parterre ilôt &#127804;&#127804;&#127804; : %ETAT6% <!--&#128167; &#127777; &#8986; --></h3>
+	
+	<p>
+	   <p><a href="/marche06"><button class="zone" id="zone6m">Marche</button></a>
+	   <a href="/arret06"><button class="zone" id="zone6a">ARRET</button></a></p>
+        </p>
+</div>
+</div>
+
+
+<!--label class="onoff">
+  <input type="checkbox" onchange="toggleCh(this)" id="tst01">
+    <span class="slider"></span>
+</label-->
+<script>
+  function marche(element){
+    var xhr = new XMLHttpRequest();
+    //window.alert(element.id);
+    xhr.open("GET", "/marche?value="+element.id, true);
+    xhr.send();
+}
+function arret(element){
+    var xhr = new XMLHttpRequest();
+    //window.alert(element.id);
+    xhr.open("GET", "/arret?value="+element.id, true);
+    xhr.send();
+}
+</script>
+</body>
+
+</html>
