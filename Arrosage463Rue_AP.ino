@@ -1,5 +1,5 @@
 /*********
- * Arrosage au 463 allée de la Roseraie Saint eustache 
+ * Arrosage au --- 
  * Coté rue
  * 
  * 6 zones d'arrosage
@@ -21,8 +21,8 @@
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
 
-const char* ssid     = "Arrosage463Rue";
-const char* password = "Anne&Guy2004";
+const char* ssid     = "yourSSID";
+const char* password = "yourPassword";
 
 const char* PARAM_INPUT = "value";
 String heureDepart = "20:00";
